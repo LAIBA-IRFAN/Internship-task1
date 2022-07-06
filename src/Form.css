@@ -1,0 +1,23 @@
+body{
+    padding:0;
+    margin:0;
+    box-sizing: border-box; 
+    background-color:var(--cui-light,#ebedef)!important; ;
+}
+
+.main_container{
+    margin:0 auto;
+    border: 1px var(--cui-light,#ebedef) solid;
+    background-color: #fff;
+}
+
+.register{
+    font-weight: 500;
+    font-size:45px;
+    color: var(--cui-medium-emphasis,rgba(44,56,74,.681))
+}
+
+.main_button{
+    width:100% !important;
+}
+

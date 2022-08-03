@@ -1,12 +1,25 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Form from './Form';
+import {Route,Routes} from 'react-router-dom';
+import Registration from './Registration';
+import Login from './Login';
+import Error from './Error';
+import Landing from './Landing';
 
 
 function App() {
   return (
-    <Form/>
+    <>
+    <Routes>
+      <Route path='/' element={<Login/>} />
+      <Route path='/registration' element={<Registration/>} />
+      <Route path='/landing' element={<Landing/>} />
+      <Route path='/error' element={<Error/>} />
+    </Routes>
+    </>
 
+  
   );
 }
 

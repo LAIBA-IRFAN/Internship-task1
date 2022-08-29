@@ -5,12 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './Form.css';
 import Click from './Click';
 import axios from 'axios';
+import Landing from './Landing';
 // import { render } from './Abc';
 
-class Registration extends React.Component{
+class Registration extends Component{
   constructor() {
     super();
     this.state = {
+      mrnumber:'',
       firstname:'',
       lastname:'',
       email:'',
@@ -27,6 +29,7 @@ class Registration extends React.Component{
     e.preventDefault();
 
     const data = {
+      mrnumber: this.state.mrnumber,
       firstname: this.state.firstname,
       lastname: this.state.lastname,
       email: this.state.email,
@@ -35,9 +38,10 @@ class Registration extends React.Component{
     };
 
     axios
-    .post('http://localhost:3000/doctor', data)
+    .post('http://localhost:3000/patient', data)
     .then(res => {
       this.setState({
+        mrnumber:'',
         firstname:'',
         lastname:'',
         email:'',
@@ -47,7 +51,7 @@ class Registration extends React.Component{
       this.props.history.push('/');
     })
     .catch(err => {
-      console.log("Error!");
+      console.log("Error!")
     })
 };
 
@@ -109,11 +113,6 @@ class Registration extends React.Component{
     );
 }
 }
-
-
-   
-
-
 
 
 export default Registration; 

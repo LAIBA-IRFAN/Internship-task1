@@ -6,7 +6,7 @@ const doctorSchema = new mongoose.Schema({
     lastname:String,
     email:String,
     phone:Number,
-    registerdate:Date
+    // registerdate:Date
 })
 
 module.exports = mongoose.model('Doctor',doctorSchema)

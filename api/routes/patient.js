@@ -11,7 +11,7 @@ router.post('/',(req,res,next)=>{
         lastname:req.body.lastname,
         email:req.body.email,
         phone:req.body.phone,
-        registerdate:req.body.registerdate
+        // registerdate:req.body.registerdate
     }) 
 
     patient.save()

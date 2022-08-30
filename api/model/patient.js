@@ -8,7 +8,7 @@ const patientSchema = new mongoose.Schema({
     email:String,
     password:String,
     phone:Number,
-    registerdate:Date
+    // registerdate:Date
 })
 
 module.exports = mongoose.model('Patient',patientSchema)

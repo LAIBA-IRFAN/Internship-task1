@@ -11,6 +11,13 @@ body{
     background-color: #fff;
 }
 
+.welcome{
+    font-weight: 500;
+    font-size:45px;
+    color: var(--cui-medium-emphasis,rgba(44,56,74,.681))
+
+}
+
 .register{
     font-weight: 500;
     font-size:45px;

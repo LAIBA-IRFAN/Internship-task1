@@ -1,4 +1,4 @@
-import React, {   Component } from "react";
+import React, {useState,Component} from "react";
 import {CForm, CInputGroup, CInputGroupText,CFormInput, CButton,CFormSelect } from '@coreui/react';
 import  CIcon  from '@coreui/icons-react';
 import { cilList,cilUser,cibMailRu,cilPhone} from '@coreui/icons';
@@ -14,7 +14,7 @@ class Registration extends Component{
   constructor() {
     super();
     this.state = {
-      mrnumber:'',
+      // mrnumber:'',
       firstname:'',
       lastname:'',
       email:'',
@@ -31,7 +31,7 @@ class Registration extends Component{
     e.preventDefault();
 
     const data = {
-      mrnumber: this.state.mrnumber,
+      // mrnumber: this.state.mrnumber,
       firstname: this.state.firstname,
       lastname: this.state.lastname,
       email: this.state.email,
@@ -43,7 +43,7 @@ class Registration extends Component{
     .post('http://localhost:3000/patient', data)
     .then(res => {
       this.setState({
-        mrnumber:'',
+        // mrnumber:'',
         firstname:'',
         lastname:'',
         email:'',
@@ -55,6 +55,10 @@ class Registration extends Component{
     .catch(err => {
       console.log("Error!")
     })
+//     const [value,setValue] = useState("patient")
+//   Click = e =>{
+//   console.log(e.target.value);
+// }
 };
 
     render(){
@@ -67,7 +71,7 @@ class Registration extends Component{
         
       <CForm noValidate onSubmit={this.onSubmit}>
 
-    <CFormSelect id="options" aria-label="Default select example" onChange={Click}>
+    <CFormSelect id="options" aria-label="Default select example" onChange={this.Click}>
   <option value="patient">Patient</option>
   <option value="doctor">Doctor</option>`
 </CFormSelect>
@@ -76,10 +80,10 @@ class Registration extends Component{
         <br></br>
 
     
-    <CInputGroup className="mb-3" id="mr_number">
+    {/* <CInputGroup className="mb-3" id="mr_number">
   <CInputGroupText id="basic-addon1"><CIcon icon={cilList} size="lg"/></CInputGroupText>
   <CFormInput name='mrnumber' value={this.state.mrnumber} onChange={this.onChange} placeholder="M.R. Number" aria-label="M.R. Number" aria-describedby="basic-addon1"/>
-   </CInputGroup>
+   </CInputGroup> */}
 
     <CInputGroup className="mb-3">
   <CInputGroupText id="basic-addon1"><CIcon icon={cilUser} size="lg"/></CInputGroupText>

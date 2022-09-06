@@ -6,6 +6,7 @@ import Registration from './Registration';
 import Login from './Login';
 import Error from './Error';
 import Landing from './Landing';
+import AfterLogin from './AfterLogin';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path='/registration' element={<Registration/>} />
       <Route path='/landing' element={<Landing/>} />
       <Route path='/error' element={<Error/>} />
+      <Route path='/afterlogin' element={<AfterLogin/>} />
     </Routes>
     </>
 

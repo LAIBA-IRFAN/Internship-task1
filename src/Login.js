@@ -6,6 +6,7 @@ import  CIcon  from '@coreui/icons-react';
 import {cibMailRu,cilPhone} from '@coreui/icons';
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import AfterLogin from './AfterLogin';
 import Landing from './Landing';
 import Registration from './Registration';
 
@@ -15,11 +16,11 @@ class Login extends Component{
         super();
         this.state = {
             email:'',
-            phone:'',
+            password:''
           };
     }
 
-    state = {
+      state = {
         redirect: false
       }
       setRedirect = () => {
@@ -42,13 +43,13 @@ class Login extends Component{
         e.preventDefault();
         const data1= {
             email: this.state.email,
-            phone: this.state.phone,
+            password: this.state.password
         }
-        if(data1){
-            alert("Successfully logged in")
-
-        }
+        console.log(data1.email);
+        return( (data1.email ==="Hello")? <AfterLogin/>:<Registration/>
+        )
     }
+
     
     render(){
     return(
@@ -67,10 +68,10 @@ class Login extends Component{
   
      <CInputGroup className="mb-3">
     <CInputGroupText id="basic-addon1"><CIcon icon={cilPhone} size="lg"/></CInputGroupText>
-    <CFormInput type='phone' name='phone' value={this.state.phone} onChange={this.onChange} placeholder="Phone Number" aria-label="Phone" aria-describedby="basic-addon1"/>
+    <CFormInput type='password' name='password' value={this.state.password} onChange={this.onChange} placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"/>
      </CInputGroup>
 
-     <CButton className="main_button" color="success" type="submit">Login</CButton><br></br><br></br>
+     <CButton className="main_button" onClick={this.onSubmit} color="success" type="submit">Login</CButton><br></br><br></br>
      {this.renderRedirect()}
      <CButton className="main_button" color="secondary" onClick={this.setRedirect}>Sign up or Register</CButton>
      </CForm>

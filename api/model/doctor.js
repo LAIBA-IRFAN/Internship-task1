@@ -6,6 +6,7 @@ const doctorSchema = new mongoose.Schema({
     lastname:String,
     email:String,
     phone:Number,
+    password:String
     // registerdate:Date
 })
 

@@ -10,6 +10,7 @@ router.post('/',(req,res,next)=>{
         lastname:req.body.lastname,
         email:req.body.email,
         phone:req.body.phone,
+        password:String
         // registerdate:req.body.registerdate
     }) 
 

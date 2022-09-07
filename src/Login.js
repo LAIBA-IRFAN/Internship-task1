@@ -3,7 +3,7 @@ import {Link, useNavigate, Navigate} from 'react-router-dom';
 import axios from 'axios';
 import { CInputGroup,CForm, CInputGroupText,CFormInput, CButton } from '@coreui/react';
 import  CIcon  from '@coreui/icons-react';
-import {cibMailRu,cilPhone} from '@coreui/icons';
+import {cibMailRu,cilLockLocked} from '@coreui/icons';
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AfterLogin from './AfterLogin';
@@ -67,7 +67,7 @@ class Login extends Component{
      </CInputGroup>
   
      <CInputGroup className="mb-3">
-    <CInputGroupText id="basic-addon1"><CIcon icon={cilPhone} size="lg"/></CInputGroupText>
+    <CInputGroupText id="basic-addon1"><CIcon icon={cilLockLocked} size="lg"/></CInputGroupText>
     <CFormInput type='password' name='password' value={this.state.password} onChange={this.onChange} placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"/>
      </CInputGroup>
 

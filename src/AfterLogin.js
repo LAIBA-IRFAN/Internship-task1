@@ -1,10 +1,20 @@
-import React from 'react';
+import React,{useState,} from 'react';
+import { Navigate} from 'react-router-dom';
 import {CFormInput,CButton} from '@coreui/react';
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Form.css';
 
 const AfterLogin =()=>{
+    const [state, setState] = useState(false);
+    const signup=()=>{
+        setState(true)
+}
+      if(state){
+        return (
+          <Navigate to='/Registration'/>
+        );
+      }
     return(
         <>
         <br></br><br></br><br></br><br></br><br></br><br></br>
@@ -15,7 +25,7 @@ const AfterLogin =()=>{
 
             <CFormInput className='input_box' type="text" placeholder="Enter MR number" aria-label="default input example"/>
             <br></br>
-            <CButton className="main_button" color="success" type="submit">Sign up or Register</CButton>
+            <CButton onClick={signup} className="main_button" color="success" type="submit">Sign up or Register</CButton>
             </div>
             </div>
 

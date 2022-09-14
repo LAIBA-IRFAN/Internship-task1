@@ -11,7 +11,6 @@ router.post('/',(req,res,next)=>{
         email:req.body.email,
         phone:req.body.phone,
         password:String
-        // registerdate:req.body.registerdate
     }) 
 
     doctor.save()

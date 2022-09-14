@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import {Route,Routes,useState,BrowserRouter} from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 import Registration from './Registration';
 import Login from './Login';
 import Error from './Error';

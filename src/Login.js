@@ -30,20 +30,6 @@ const Login =()=>{
         if(e.target.email.value && e.target.email.value){
           setConfirm(true);
         }
-      
-    
-        // const emailCond = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
-        // if(data2.email===""){
-        //   alert("Email is required")
-        // }
-        // else if(!data2.email.match(emailCond)){
-        //   alert("Please enter a valid email address")
-        // }
-
-
-        // else if(data2.password===""){
-        //   alert("Password is required")
-        // }
 
       }
       const signup=()=>{
@@ -77,12 +63,12 @@ const Login =()=>{
     <CForm noValidate onSubmit={submit}>
     <CInputGroup className="mb-3">
     <CInputGroupText id="basic-addon1"><CIcon icon={cibMailRu} size="lg"/></CInputGroupText>
-    <CFormInput type='email' name='email' value={info.email}  onChange={change} placeholder="Email Address" aria-label="Email Address" aria-describedby="basic-addon1"/>
+    <CFormInput type='email' name='email' value={info.email}  onChange={change} placeholder="Email Address" aria-label="Email Address" aria-describedby="basic-addon1" autoComplete='off'/>
      </CInputGroup>
   
      <CInputGroup className="mb-3">
     <CInputGroupText id="basic-addon1"><CIcon icon={cilLockLocked} size="lg"/></CInputGroupText>
-    <CFormInput type='password' name='password' value={info.password}   onChange={change} placeholder="Password" aria-label="Password" aria-describedby="basic-addon1"/>
+    <CFormInput type='password' name='password' value={info.password}   onChange={change} placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" autoComplete='off'/>
      </CInputGroup>
 
      <CButton className="main_button" color="success" type="submit">Login</CButton><br></br><br></br>

@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './Form.css';
 import Click from './Click';
 import axios from 'axios';
+import { Navigate } from "react-router-dom";
 
 const Registration=()=>{
   const [details,setDetails] = useState({
@@ -16,6 +17,8 @@ const Registration=()=>{
     phone:'',
     password:''
   })
+  const [patstate,setPatstate] = useState(false);
+  const [docstate,setDocstate] = useState(false);
 
 
   const Change = e => {
@@ -43,7 +46,7 @@ const Registration=()=>{
     };
 
     if(data.firstname && data.lastname && data.email && data.phone && data.password){
-      // console.log(data)
+      
       axios
       .post('http://localhost:3000/doctor', data)
       .then(res => {
@@ -58,6 +61,7 @@ const Registration=()=>{
           }
 
         })
+        setDocstate(true);
         // this.props.history.push('/');
       })
       .catch(err => {
@@ -79,6 +83,7 @@ const Registration=()=>{
           }
 
         })
+        setPatstate(true);
         // this.props.history.push('/');
       })
       .catch(err => {
@@ -86,7 +91,13 @@ const Registration=()=>{
       })
 
     }
-}
+  }
+    if(patstate){
+      return( <Navigate to='/'/>)
+    }
+    if(docstate){
+      return( <Navigate to='/'/>)
+    }
 
     return(
     <>
